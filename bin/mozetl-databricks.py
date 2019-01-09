@@ -12,7 +12,7 @@ def run_submit(args, instance="dbc-caf9527b-e073.cloud.databricks.com"):
         "run_name": "mozetl local submission",
         "new_cluster": {
             "spark_version": "4.3.x-scala2.11",
-            "node_type_id": "c3.4xlarge",
+            "node_type_id": "i3.8xlarge",
             "num_workers": args.num_workers,
             "aws_attributes": {
                 "availability": "ON_DEMAND",

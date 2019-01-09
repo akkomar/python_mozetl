@@ -175,4 +175,7 @@ def stop_session_safely(spark_session):
     print("SPARK.HOME: ")
     print(spark_session.conf.get("spark.home", ""))
     if spark_session.conf.get("spark.home", "").startswith("/databricks"):
+        logger.info("Stopping session")
         spark_session.stop()
+    else:
+        logger.info("NOT stopping")
