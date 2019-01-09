@@ -169,6 +169,9 @@ def stop_session_safely(spark_session):
     This is no-op if running on Databricks - we shouldn't stop session there since
     it's managed by the platform, doing so fails the job.
     """
+    logger.info("SPARK_HOME:")
+    logger.info(spark_session.conf.get("spark.home", ""))
+
     print("SPARK.HOME: ")
     print(spark_session.conf.get("spark.home", ""))
     if spark_session.conf.get("spark.home", "").startswith("/databricks"):
